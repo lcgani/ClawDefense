@@ -4,21 +4,16 @@ Real-time security system for OpenClaw using Elasticsearch Agent Builder. Preven
 
 ## The Problem
 
-OpenClaw powers thousands of AI agents across enterprises, but a critical vulnerability (CVE-2026-25253, CVSS 8.8) left them defenseless. Security teams watched helplessly as 35% of deployments fell to attacks they couldn't see coming. The ClawHub marketplace became a breeding ground for malicious skills - 341 out of 2,857 packages contained hidden threats. Companies had no way to audit configurations, monitor runtime behavior, or stop attacks before damage occurred.
+OpenClaw (CVE-2026-25253, CVSS 8.8) left 35% of deployments compromised. ClawHub had 341 malicious skills out of 2,857 packages. No real-time protection existed.
 
-Traditional security tools failed because they weren't built for AI agents. By the time threats were detected, sensitive data was already exfiltrated, credentials compromised, and systems breached.
+## The Solution
 
-## What Claw Defense Does
+Four AI agents protect OpenClaw in real-time:
 
-Claw Defense deploys four AI security agents that work together to protect OpenClaw instances in real-time. Think of it as a security operations center that never sleeps, analyzing every configuration, monitoring every action, and blocking threats before they execute.
-
-**Config Audit Agent** hunts through your OpenClaw configurations looking for exposed API tokens, weak authentication, and dangerous wildcard permissions. It finds vulnerabilities you didn't know existed.
-
-**Runtime Monitor Agent** watches every prompt and action in real-time, detecting prompt injection attempts and data exfiltration patterns as they happen - not hours later in log files.
-
-**Skill Scanner Agent** analyzes every skill before installation, using pattern matching to identify malicious code, suspicious imports, and token theft attempts hidden in seemingly innocent packages.
-
-**Breach Detector Agent** connects the dots across all security events using Elasticsearch's ES|QL queries, correlating threat indicators to catch sophisticated attacks that single-point solutions miss.
+- **Config Audit** - Finds exposed tokens, weak auth, dangerous permissions
+- **Runtime Monitor** - Detects prompt injection and data exfiltration live
+- **Skill Scanner** - Blocks malicious code before installation
+- **Breach Detector** - Correlates threats using ES|QL queries
 
 ## Architecture
 
